@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Audio</title>
+</head>
+<body onload="comenzarReloj()">
+    <p>Ingrese le tiempo en segundos</p>
+    <input type="number" name="tiempo" id="tiempo">
+    <button onclick="activarAlarma()">Alarma</button>
+    <h1 id="textApagado">00:00:00</h1>
+
+    <audio id="audioAlarma">
+        <source src="../7 - Audios/Sonidos/alarma.mp3" type="audio/mpeg">
+        Sonido no habilitado
+    </audio>
+
+    <script>
+
+        let mostrarTiempoUs = document.getElementById("tiempo");
+        let apagadoTexto = document.getElementById("textApagado");
+        let elementoSonido = document.getElementById("audioAlarma");
+        let elementoHora = document.getElementById("hora");
+
+        function activarAlarma() {
+            setTimeout(tiempoCumplido, 1000 * mostrarTiempoUs.value);
+
+        }
+
+        function tiempoCumplido() {
+            apagadoTexto.style.color = "green";
+            elementoSonido.play();
+            alert(toLoca)
+        }
+
+        function comenzarReloj(){
+            setInterval(tictac, 1000);
+        }
+
+        function tictac(){
+            let tiempoActual = new Date();
+            let horatiempo = tiempoActual.getHours();
+            let minutosTiempo = String(tiempoActual.getMinutes()).padStart(2, "0");
+            let segundosTiempo = String(tiempoActual.getSeconds()).padStart(2, "0");
+
+            let tiempoTranscurrido = horatiempo + ":" + minutosTiempo + ":" + segundosTiempo
+
+            apagadoTexto.textContent = tiempoTranscurrido;
+        }
+    </script>
+</body>
+</html>

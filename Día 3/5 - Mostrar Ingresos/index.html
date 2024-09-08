@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Ingresos</title>
+</head>
+
+<body>
+    <p>Ingresa tu nombre</p>
+    <input type="text" name="nombre" id="nombreUs">
+    <p>Ingresa tu edad</p>
+    <input type="text" name="edad" id="edadUs">
+    <button onclick="datosPersona()">Enviar</button>
+
+    <h1 id="salida">No se tu nombre</h1>
+
+
+    <input type="text" id="inputTexto" value="Este es un mensaje">
+    <button onclick="mostrarTexto()">Click aqui</button>
+    <h1 id="titulo"></h1>
+
+    <input type="text" id="inputTexto2" value="Luis Miguel">
+    <button onclick="mostrarTexto2()">Click aqui</button>
+    <h1 id="titulo2"></h1>
+
+    <script>
+
+        function mostrarTexto2() {
+            let elementoTextoNombre = document.getElementById("inputTexto2");
+            let elementoMensajeNombre = document.getElementById("titulo2");
+
+            elementoMensajeNombre.textContent = "Mi artista favorito es " + elementoTextoNombre.value;
+        }
+
+        function mostrarTexto() {
+            let texto = document.getElementById("inputTexto");
+            let mensaje = document.getElementById("titulo");
+            mensaje.textContent = texto.value;
+        }
+
+        function datosPersona() {
+            let elementoNombre = document.getElementById("nombreUs");
+            let elementoEdad = document.getElementById("edadUs");
+            let elementoTexto = document.getElementById("salida");
+            elementoTexto.textContent = "Tu te llamas: " + elementoNombre.value + " y tienes una edad de: " + elementoEdad.value;
+        }
+
+    </script>
+</body>
+
+</html>

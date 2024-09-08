@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso de Usuario</title>
+</head>
+
+<body>
+    <input id="nombreUsuario" type="text" placeholder="Ingresa Nombre">
+    <button onclick="saludarNombre()">Enviar Saludo</button>
+
+    <script>
+      function saludarNombre(){
+        alert("Hola Mundo como estas, " + document.getElementById("nombreUsuario").value)
+      }
+    </script>
+</body>
+
+</html>

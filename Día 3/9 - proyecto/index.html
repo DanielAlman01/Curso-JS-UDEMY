@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Proyecto dia 3</title>
+</head>
+
+<body onload="inicioTiempo()">
+
+    <h1>Reto de dia 3</h1>
+    <p>Debe responder las preguntas en el menor tiempo de lo contrario se detendra el tiempo</p>
+    <p id="tiempoRestante">00:00</p>
+
+    <div class="contenido">
+        <p>Cuel es mi nombre</p>
+        <input type="text" id="pregunta1">
+        <p>Cuel es mi edad</p>
+        <input type="text" id="pregunta2">
+        <p>Cuel es mi dia</p>
+        <input type="text" id="pregunta3">
+        <p>Cuel es mi novia</p>
+        <input type="text" id="pregunta4">
+        <p>Cuel es mi mama</p>
+        <input type="text" id="pregunta5">
+        <button onclick="enviarRespuestas()">Enviar</button>
+        <button onclick="restablecerPreguntas()">Restablecer</button>
+    </div>
+
+    <script>
+        let tiempoTerminado;
+        let intervaloTiempo;
+
+        function inicioTiempo() {
+            tiempoTerminado = setTimeout(tiempoCumplido, 30000);
+            intervaloTiempo = setInterval(tictac, 1000)
+
+            document.getElementById("tiempoRestante").textContent = 30;
+        }
+
+        function intervaloValor() {
+            setInterval(tiempoCumplido, 30)
+        }
+
+        function tictac() {
+            let tiempo = document.getElementById("tiempoRestante").textContent;
+
+            document.getElementById("tiempoRestante").textContent = tiempo - 1;
+        }
+
+        function tiempoCumplido() {
+            clearInterval(intervaloTiempo);
+            document.getElementById("tiempoRestante").textContent = 0;
+            alert("Su tiempo se termino, porfavor reinicie el juego");
+        }
+
+        function restablecerPreguntas() {
+            location.reload()
+        }
+
+        function enviarRespuestas() {
+            let elemetoPregunta1 = document.getElementById("pregunta1");
+            let elemetoPregunta2 = document.getElementById("pregunta2");
+            let elemetoPregunta3 = document.getElementById("pregunta3");
+            let elemetoPregunta4 = document.getElementById("pregunta4");
+            let elemetoPregunta5 = document.getElementById("pregunta5");
+            let diaActual = new Date();
+            let diaSemana = diaActual.toLocaleDateString('es-ES');
+            clearTimeout(tiempoTerminado);
+            clearInterval(intervaloTiempo);
+
+            alert("La fecha de hoy es: " + diaSemana + "\n" + " La respuesta 1 es: " + elemetoPregunta1.value + "\n" + " La respuesta 2 es: " + elemetoPregunta2.vlaues 
+            + "\n" + " La respuesta 3 es: " + elemetoPregunta3.vlaues + "\n" + " La respuesta 4 es: " + elemetoPregunta4.vlaues + "\n" + " La respuesta 5 es: " + elemetoPregunta5.vlaues)
+        }
+
+    </script>
+
+</body>
+
+</html>
