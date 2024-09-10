@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return</title>
+</head>
+
+<body>
+    <input type="number" id="numero1" placeholder="numero 1">
+    <input type="number" id="numero2" placeholder="numero 2">
+    <button onclick="mostrarResultado()">Sumar</button>
+    <p id="mostaraResultadoBoton">Resultado</p>
+    <script>
+        function sumar(numero1, numero2) {
+            resultado = +numero1 + +numero2;
+            return resultado;       
+        }
+
+        function mostrarResultado(){
+            let elemenNum1 = document.getElementById("numero1");
+            let elemenNum2 = document.getElementById("numero2");
+            let elemenMostrarText = document.getElementById("mostaraResultadoBoton");
+            let elemenSuma = sumar(elemenNum1.value, elemenNum2.value);
+
+            elemenMostrarText.textContent = resultado
+        }
+
+    </script>
+</body>
+
+</html>
